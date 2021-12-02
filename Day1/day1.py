@@ -1,4 +1,8 @@
+import time
+
+
 def part_a():
+    t1 = time.time()
     with open('input.txt', 'r') as f:
         inputs = [int(i) for i in f.readlines()]
     increases = 0
@@ -10,7 +14,21 @@ def part_a():
         if i > last_inp:
             increases += 1
         last_inp = i
+    t2 = time.time()
     print(increases)
+    print(f'finished in {t2-t1} seconds')
+
+
+def part_a_comp():
+    with open('input.txt', 'r') as f:
+        inputs = [int(i) for i in f.readlines()]
+    increases, last_inp = 0, -1
+    for i in inputs:
+        if -1 != i > last_inp:
+            increases += 1
+        last_inp = i
+    print(increases)
+
 
 
 def part_b():
@@ -27,4 +45,4 @@ def part_b():
 
 
 if __name__ == '__main__':
-    part_b()
+    part_a()
