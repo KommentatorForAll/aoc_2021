@@ -27,7 +27,7 @@ def part_a():
     numbers, boards = input_data[0], input_data[1:]
     numbers = [int(i) for i in numbers.split(',')]
     boards = [np.array([[int(x) for x in r.split(' ') if x != ''] for r in board.split('\n')]) for board in boards]
-    masks = [np.ma.make_mask(np.array([[False for k in range(5)] for j in range(5)])) for i in range(len(boards))]
+    masks = [np.ma.make_mask(np.array([[False]*5]*5)) for i in range(len(boards))]
 
     for number in numbers:
         for i, board in enumerate(boards):
@@ -43,8 +43,8 @@ def part_b():
     numbers, boards = input_data[0], input_data[1:]
     numbers = [int(i) for i in numbers.split(',')]
     boards = [np.array([[int(x) for x in r.split(' ') if x != ''] for r in board.split('\n')]) for board in boards]
-    masks = [np.ma.make_mask(np.array([[False for k in range(5)] for j in range(5)])) for i in range(len(boards))]
-    won_mask = np.array([False for i in range(len(boards))])
+    masks = [np.ma.make_mask(np.array([[False]*5]*5)) for i in range(len(boards))]
+    won_mask = np.array([False]*len(boards))
     enable_end = False
 
     for number in numbers:
