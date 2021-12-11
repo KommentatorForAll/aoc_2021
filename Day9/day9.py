@@ -21,7 +21,7 @@ def part_a():
     # print(mask)
     # print(inp*mask)
     inp = inp + 1
-    print((inp * mask).sum())
+    print(f'part a: {(inp * mask).sum()}')
 
     adj = [[-1, 0], [1, 0], [0, -1], [0, 1]]
 
@@ -45,9 +45,8 @@ def part_a():
                 print(l[-1])
                 l.sort()
                 l = l[1:]
-    print(l)
+    print(f'part b: {l[0]*l[1]*l[2]}')
 
-    # print(get_basin(1, 2, pad))
 
 if __name__ == '__main__':
     part_a()
