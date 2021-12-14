@@ -38,9 +38,9 @@ def main(part_a=True):
             paper = np.ma.mask_or(paper[:, :i], paper[:, :i:-1])
         if part_a:
             break
-    print(np.array([['+' if x else '.' for x in row] for row in paper]))
+    # print(np.array([['+' if x else '.' for x in row] for row in paper]))
     for j in range(len(paper)):
-        print(''.join(['#' if x else '.' for x in paper[j]]))
+        print(''.join(['#' if x else ' ' for x in paper[j]]))
     print(paper.sum())
 
 
