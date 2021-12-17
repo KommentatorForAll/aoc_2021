@@ -80,7 +80,8 @@ def part_b():
     y_range = range(int(y_range[0]), int(y_range[1])+1)
     counts = 0
     for x in range(x_range.stop+1, 0, -1):
-        for y in range(y_range.start-1, 1000):
+        # 141 bc highest y was achieved with init vel of y=140
+        for y in range(y_range.start-1, 141):
             hit, through, over, highest = simulate((x, y), x_range, y_range)
             if hit:
                 counts += 1
